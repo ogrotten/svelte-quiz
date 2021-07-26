@@ -1,3 +1,5 @@
+<svelte:options tag="temp-question" />
+
 <script>
 	export let question
 	export let nextQ

@@ -1,12 +1,17 @@
+<svelte:options tag="webc-quiz" />
+
 <script>
+	import { onMount } from "svelte"
 	import Question from "./Question.svelte"
 	let activeQ = 0
 	let score = 0
 	let quiz = getQuiz()
+	// let quiz
 
 	async function getQuiz() {
 		const res = await fetch("https://opentdb.com/api.php?amount=10&category=15&type=multiple")
 		const quiz = await res.json()
+		console.log(`conlog: `, await quiz)
 		return quiz
 	}
 
